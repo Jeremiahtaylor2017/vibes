@@ -29,7 +29,7 @@ import {
     const isFriend = friends.find(friend => friend._id === friendId);
 
     const patchFriend = async () => {
-        const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`,
+        const response = await fetch(`vibes-backend-production.up.railway.app/users/${_id}/${friendId}`,
         {
             method: "PATCH",
             headers: {

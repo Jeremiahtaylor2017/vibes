@@ -43,7 +43,7 @@ import FlexBetween from "components/FlexBetween";
     const primary = palette.primary.main;
 
     const patchLike = async () => {
-        const response = await fetch(`http://localhost:3001/posts/${postId}/like`,
+        const response = await fetch(`vibes-backend-production.up.railway.app/posts/${postId}/like`,
         {
             method: "PATCH",
             headers: {
@@ -73,7 +73,7 @@ import FlexBetween from "components/FlexBetween";
                     height="auto"
                     alt="post"
                     style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-                    src={`http://localhost:3001/assets/${picturePath}`}
+                    src={`vibes-backend-production.up.railway.app/assets/${picturePath}`}
                 />
             )}
             <FlexBetween mt="0.25rem">
