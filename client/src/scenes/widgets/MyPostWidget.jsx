@@ -48,7 +48,7 @@ const MyPostWidget = ({ picturePath }) => {
             formData.append("picturePath", image.name);
         }
 
-        const response = await fetch(`vibes-backend-production.up.railway.app/posts`,
+        const response = await fetch(`https://vibes-backend-production.up.railway.app/posts`,
         {
             method: "POST",
             headers: { Authorization: `Bearer ${token}`},

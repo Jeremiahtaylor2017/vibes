@@ -17,7 +17,7 @@ const ProfilePage = () => {
     const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
     const getUser = async () => {
-        const response = await fetch(`vibes-backend-production.up.railway.app/users/${userId}`,
+        const response = await fetch(`https://vibes-backend-production.up.railway.app/users/${userId}`,
         {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`}
