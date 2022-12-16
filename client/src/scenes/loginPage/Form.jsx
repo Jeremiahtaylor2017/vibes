@@ -25,7 +25,7 @@ const registerSchema = yup.object().shape({
     password: yup.string().required("required"),
     location: yup.string().required("required"),
     occupation: yup.string().required("required"),
-    picture: yup.string().required("required")
+    picture: yup.string()
 })
 
 const loginSchema = yup.object().shape({
@@ -62,8 +62,14 @@ const Form = () => {
         const formData = new FormData();
         for (let value in values) {
             formData.append(value, values[value])
+            console.log(value);
         }
-        formData.append('picturePath', values.picture.name);
+
+        if (values.picture) {
+            formData.append('picturePath', values.picture.name);
+        } else {
+            formData.append('picturePath', "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png");
+        }
 
         const savedUserResponse = await fetch(
             "https://vibes-backend-production.up.railway.app/auth/register",
