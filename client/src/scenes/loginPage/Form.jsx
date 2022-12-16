@@ -62,14 +62,11 @@ const Form = () => {
         const formData = new FormData();
         for (let value in values) {
             formData.append(value, values[value])
-            console.log(value);
         }
 
         if (values.picture) {
             formData.append('picturePath', values.picture.name);
-        } else {
-            formData.append('picturePath', "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png");
-        }
+        } 
 
         const savedUserResponse = await fetch(
             "https://vibes-backend-production.up.railway.app/auth/register",
