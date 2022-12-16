@@ -15,18 +15,18 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         max: 50,
         unique: true
     },
     password: {
         type: String,
-        require: true,
+        required: true,
         min: 5
     },
     picturePath: {
         type: String,
-        default: ""
+        default: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
     },
     friends: {
         type: Array,
